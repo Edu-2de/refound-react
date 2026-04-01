@@ -1,5 +1,18 @@
 import Button from "./components/button";
+import Icon from "./components/icon";
 import Text from "./components/text";
+
+import BedIcon from "./assets/icons/Bed.svg?react";
+import ArrowLeftIcon from "./assets/icons/CaretLeft.svg?react";
+import ArrowRightIcon from "./assets/icons/CaretRight.svg?react";
+import CloudIcon from "./assets/icons/CloudArrowUp.svg?react";
+import DesktopIcon from "./assets/icons/DesktopTower.svg?react";
+import ForkKnifeIcon from "./assets/icons/ForkKnife.svg?react";
+import MagnifyingGlassIcon from "./assets/icons/MagnifyingGlass.svg?react";
+import PoliceCarIcon from "./assets/icons/PoliceCar.svg?react";
+import ReceiptIcon from "./assets/icons/Receipt.svg?react";
+import WrenchIcon from "./assets/icons/Wrench.svg?react";
+import CircleIcon from "./assets/icons/circle-notch.svg?react";
 
 function App() {
     return (
@@ -41,6 +54,29 @@ function App() {
                 <Button disabled size="lg">
                     Enviar
                 </Button>
+            </div>
+
+            <div className="flex flex-row gap-5 bg-green-100 p-6 rounded-lg">
+                <Icon fill="white" className="h-6 w-6" svg={BedIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={ArrowLeftIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={ArrowRightIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={CloudIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={DesktopIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={ForkKnifeIcon} />
+                <Icon
+                    fill="white"
+                    className="h-6 w-6"
+                    svg={MagnifyingGlassIcon}
+                />
+                <Icon fill="white" className="h-6 w-6" svg={PoliceCarIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={ReceiptIcon} />
+                <Icon fill="white" className="h-6 w-6" svg={WrenchIcon} />
+                <Icon
+                    fill="white"
+                    className="h-6 w-6"
+                    svg={CircleIcon}
+                    animate
+                />
             </div>
         </div>
     );
