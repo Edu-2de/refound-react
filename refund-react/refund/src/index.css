@@ -16,3 +16,7 @@
 
     --font-sans: system-ui, "Open Sans", Roboto, sans-serif;
 }
+
+body {
+    background-color: var(--color-gray-400);
+}
