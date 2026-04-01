@@ -7,7 +7,7 @@ export const inputVariants = tv({
         container: "flex flex-col gap-2 group",
         label: `
             text-gray-200 group-focus-within:text-green-100 
-            group-focus-within:font-bold transition`,
+            group-focus-within:font-bold transition-all`,
         wrapper: `
             border-2 border-solid border-gray-300 
             focus-within:border-green-100 bg-transparent rounded flex 
@@ -44,11 +44,11 @@ export default function InputText({
     const { container, label, wrapper, input } = inputVariants({ size });
 
     return (
-        <div className={container({ className })}>
+        <div className={container()}>
             <Text variant="body-xs" className={label()}>
                 {title}
             </Text>
-            <div className={wrapper()}>
+            <div className={wrapper({ className })}>
                 <input className={input()} type="text" {...props} />
             </div>
         </div>

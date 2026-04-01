@@ -15,6 +15,7 @@ import WrenchIcon from "./assets/icons/Wrench.svg?react";
 import CircleIcon from "./assets/icons/circle-notch.svg?react";
 import ButtonIcon from "./components/button-icon";
 import InputText from "./components/input-text";
+import NavLink from "./components/navlink";
 
 function App() {
     return (
@@ -106,7 +107,12 @@ function App() {
                 <InputText
                     title="NOME DA SOLICITAÇÃO"
                     placeholder="digite aqui"
+                    className="w-100 h-13"
                 />
+            </div>
+
+            <div className="flex gap-5">
+                <NavLink to="/">Teste</NavLink>
             </div>
         </div>
     );
