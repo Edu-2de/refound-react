@@ -14,6 +14,7 @@ import ReceiptIcon from "./assets/icons/Receipt.svg?react";
 import WrenchIcon from "./assets/icons/Wrench.svg?react";
 import CircleIcon from "./assets/icons/circle-notch.svg?react";
 import ButtonIcon from "./components/button-icon";
+import InputText from "./components/input-text";
 
 function App() {
     return (
@@ -99,6 +100,13 @@ function App() {
                 <ButtonIcon ariaLabel="Teste" icon={ArrowLeftIcon} />
                 <ButtonIcon ariaLabel="Teste" icon={ArrowRightIcon} />
                 <ButtonIcon ariaLabel="Teste" icon={CloudIcon} />
+            </div>
+
+            <div className="flex gap-5">
+                <InputText
+                    title="NOME DA SOLICITAÇÃO"
+                    placeholder="digite aqui"
+                />
             </div>
         </div>
     );

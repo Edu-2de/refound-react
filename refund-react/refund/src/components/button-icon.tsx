@@ -45,7 +45,7 @@ export default function ButtonIcon({
     return (
         <button
             aria-label={ariaLabel}
-            disabled={isHandling as boolean}
+            disabled={isHandling}
             className={buttonIconVariants({
                 size,
                 disabled: isHandling,
