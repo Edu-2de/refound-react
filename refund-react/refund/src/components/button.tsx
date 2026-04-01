@@ -1,5 +1,7 @@
 import type React from "react";
 import { tv, type VariantProps } from "tailwind-variants";
+import CircleNotch from "../assets/icons/circle-notch.svg?react";
+import Icon from "./icon";
 import Text from "./text";
 
 export const buttonVariants = tv({
@@ -27,24 +29,41 @@ export const buttonVariants = tv({
 interface ButtonProps
     extends
         VariantProps<typeof buttonVariants>,
-        React.ComponentProps<"button"> {}
+        React.ComponentProps<"button"> {
+    handling?: boolean;
+}
 
 export default function Button({
     children,
     size,
     disabled,
+    handling,
     className,
     ...props
 }: ButtonProps) {
+    const isHandling = disabled || handling;
+
     return (
         <button
-            className={buttonVariants({ size, disabled, className })}
+            className={buttonVariants({
+                size,
+                disabled: isHandling,
+                className,
+            })}
             {...props}
-            disabled={disabled as boolean}
+            disabled={isHandling as boolean}
         >
-            <Text className="text-white" variant="heading-sm-bold">
-                {children}
-            </Text>
+            {handling ? (
+                <Icon
+                    className="w-6 h-6 fill-white"
+                    animate
+                    svg={CircleNotch}
+                />
+            ) : (
+                <Text className="text-white" variant="heading-sm-bold">
+                    {children}
+                </Text>
+            )}
         </button>
     );
 }

@@ -13,6 +13,7 @@ import PoliceCarIcon from "./assets/icons/PoliceCar.svg?react";
 import ReceiptIcon from "./assets/icons/Receipt.svg?react";
 import WrenchIcon from "./assets/icons/Wrench.svg?react";
 import CircleIcon from "./assets/icons/circle-notch.svg?react";
+import ButtonIcon from "./components/button-icon";
 
 function App() {
     return (
@@ -38,13 +39,16 @@ function App() {
                 </Text>
             </div>
 
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-row gap-5">
                 <Button size="sm">Confirmar</Button>
                 <Button size="md">Nova Solicitação</Button>
                 <Button size="lg">Enviar</Button>
             </div>
 
-            <div className="flex flex-row gap-10">
+            <div className="flex flex-row gap-5">
+                <Button handling size="sm">
+                    Confirmar
+                </Button>
                 <Button disabled size="sm">
                     Confirmar
                 </Button>
@@ -57,6 +61,12 @@ function App() {
             </div>
 
             <div className="flex flex-row gap-5 bg-green-100 p-6 rounded-lg">
+                <Icon
+                    fill="white"
+                    className="h-6 w-6"
+                    svg={CircleIcon}
+                    animate
+                />
                 <Icon fill="white" className="h-6 w-6" svg={BedIcon} />
                 <Icon fill="white" className="h-6 w-6" svg={ArrowLeftIcon} />
                 <Icon fill="white" className="h-6 w-6" svg={ArrowRightIcon} />
@@ -71,12 +81,24 @@ function App() {
                 <Icon fill="white" className="h-6 w-6" svg={PoliceCarIcon} />
                 <Icon fill="white" className="h-6 w-6" svg={ReceiptIcon} />
                 <Icon fill="white" className="h-6 w-6" svg={WrenchIcon} />
-                <Icon
-                    fill="white"
-                    className="h-6 w-6"
-                    svg={CircleIcon}
-                    animate
+            </div>
+
+            <div className="flex flex-row gap-5">
+                <ButtonIcon
+                    ariaLabel="Teste"
+                    handling
+                    icon={MagnifyingGlassIcon}
                 />
+                <ButtonIcon
+                    ariaLabel="Teste"
+                    disabled
+                    icon={MagnifyingGlassIcon}
+                />
+
+                <ButtonIcon ariaLabel="Teste" icon={MagnifyingGlassIcon} />
+                <ButtonIcon ariaLabel="Teste" icon={ArrowLeftIcon} />
+                <ButtonIcon ariaLabel="Teste" icon={ArrowRightIcon} />
+                <ButtonIcon ariaLabel="Teste" icon={CloudIcon} />
             </div>
         </div>
     );
