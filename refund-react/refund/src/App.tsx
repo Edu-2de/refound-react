@@ -17,6 +17,7 @@ import ButtonIcon from "./components/button-icon";
 import InputSelect from "./components/input-select";
 import InputText from "./components/input-text";
 import NavLink from "./components/navlink";
+import Header from "./components/header";
 
 function App() {
     return (
@@ -191,6 +192,18 @@ function App() {
                     <NavLink to="/">Teste</NavLink>
                     <NavLink to="/Inicio">Inicio</NavLink>
                     <NavLink to="/Componentes">Componentes</NavLink>
+                </div>
+            </section>
+
+            <section className="w-full max-w-5xl flex flex-col gap-4 border border-gray-300 p-6 rounded-xl">
+                <Text
+                    variant="heading-sm-bold"
+                    className="text-green-100 border-b border-gray-300 pb-2"
+                >
+                    7. Header
+                </Text>
+                <div className="flex flex-wrap gap-5 items-end">
+                    <Header />
                 </div>
             </section>
         </main>
