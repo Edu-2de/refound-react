@@ -174,7 +174,6 @@ function App() {
                     <InputText
                         title="NOME DA SOLICITAÇÃO"
                         placeholder="digite aqui"
-                        size="md"
                     />
 
                     <InputSelect title="CATEGORIAS" />
