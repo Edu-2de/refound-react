@@ -20,6 +20,7 @@ import InputSelect from "./components/input-select";
 import InputText from "./components/input-text";
 import NavLink from "./components/navlink";
 import SolicitationLine from "./components/solicitation-line";
+import Pagination from "./components/pagination";
 
 function App() {
     return (
@@ -234,6 +235,26 @@ function App() {
                             category="Alimentação"
                             name="Rodrigo"
                             amount="34,78"
+                        />
+                    </Card>
+                </div>
+            </section>
+
+            <section className="w-full max-w-5xl flex flex-col gap-4 border border-gray-300 p-6 rounded-xl">
+                <Text
+                    variant="heading-sm-bold"
+                    className="text-green-100 border-b border-gray-300 pb-2"
+                >
+                    10. Paginação
+                </Text>
+                <div className="flex flex-wrap gap-5 items-end">
+                    <Card size="lg">
+                        <Pagination
+                            onPageChange={(currentPage) =>
+                                (currentPage = currentPage + 1)
+                            }
+                            currentPage={3}
+                            totalPages={3}
                         />
                     </Card>
                 </div>
