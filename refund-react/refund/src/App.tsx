@@ -14,11 +14,12 @@ import ReceiptIcon from "./assets/icons/Receipt.svg?react";
 import WrenchIcon from "./assets/icons/Wrench.svg?react";
 import CircleIcon from "./assets/icons/circle-notch.svg?react";
 import ButtonIcon from "./components/button-icon";
+import Card from "./components/card";
+import Header from "./components/header";
 import InputSelect from "./components/input-select";
 import InputText from "./components/input-text";
 import NavLink from "./components/navlink";
-import Header from "./components/header";
-import Card from "./components/card";
+import SolicitationLine from "./components/solicitation-line";
 
 function App() {
     return (
@@ -216,8 +217,24 @@ function App() {
                     8. Card
                 </Text>
                 <div className="flex flex-wrap gap-5 items-end">
+                    <Card size="lg"></Card>
+                </div>
+            </section>
+
+            <section className="w-full max-w-5xl flex flex-col gap-4 border border-gray-300 p-6 rounded-xl">
+                <Text
+                    variant="heading-sm-bold"
+                    className="text-green-100 border-b border-gray-300 pb-2"
+                >
+                    9. Linha de solicitação
+                </Text>
+                <div className="flex flex-wrap gap-5 items-end">
                     <Card size="lg">
-                        <Text>Olá mundo!</Text>
+                        <SolicitationLine
+                            category="Alimentação"
+                            name="Rodrigo"
+                            amount="34,78"
+                        />
                     </Card>
                 </div>
             </section>
