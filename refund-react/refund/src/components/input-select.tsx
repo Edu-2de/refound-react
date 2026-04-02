@@ -30,10 +30,8 @@ export default function InputSelect({
                 <Select.Trigger
                     className={wrapper({
                         className: `
-                            /* 'group' permite que o ícone lá dentro escute o estado do botão */
                             group w-full flex justify-between items-center outline-none 
                             bg-transparent text-gray-100 cursor-pointer 
-                            /* Mantém a borda verde enquanto a lista flutuante estiver aberta! */
                             data-[state=open]:border-green-100 
                             ${wrapperClassName || ""}
                         `,
@@ -45,9 +43,9 @@ export default function InputSelect({
                         svg={CaretDownIcon}
                         className={`
                             fill-gray-300 w-5 h-5 transition-transform duration-300
-                            /* 2. O ícone reage ao estado 'open' do grupo (botão pai) */
                             group-data-[state=open]:rotate-180
                             group-data-[state=open]:fill-green-100
+                            group-focus-within:fill-green-100
                         `}
                     />
                 </Select.Trigger>
