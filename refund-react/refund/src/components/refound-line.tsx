@@ -1,4 +1,4 @@
-import cv from "classNames";
+import cv from "classnames";
 import BedIcon from "../assets/icons/Bed.svg?react";
 import KnifeIcon from "../assets/icons/ForkKnife.svg?react";
 import CarIcon from "../assets/icons/PoliceCar.svg?react";
@@ -19,19 +19,19 @@ const iconsVariation = {
 
 type Category = keyof typeof iconsVariation;
 
-interface SolicitationLineProps extends React.ComponentProps<"div"> {
+interface RefoundLineProps extends React.ComponentProps<"div"> {
     category: Category;
     name: string;
     amount: string;
 }
 
-export default function SolicitationLine({
+export default function RefoundLine({
     category,
     name,
     amount,
     className,
     ...props
-}: SolicitationLineProps) {
+}: RefoundLineProps) {
     const CurrentIcon = iconsVariation[category].icon;
     return (
         <div
