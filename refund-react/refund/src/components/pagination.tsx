@@ -16,21 +16,29 @@ export default function Pagination({
     onPageChange,
 }: PaginationProps) {
     return (
-        <nav aria-label="Paginação" className="flex items-center gap-4">
+        <nav
+            aria-label="Paginação"
+            className="flex items-center gap-2 max-w-26.5"
+        >
             <ButtonIcon
                 disabled={currentPage === 1}
                 onClick={() => onPageChange(currentPage - 1)}
                 icon={ArrowLeftIcon}
                 ariaLabel="previous"
+                size="sm"
             />
-            <Text variant="body-md">
-                {currentPage} / {totalPages}
-            </Text>
+            <div className="flex-1 text-center">
+                <Text variant="body-md">
+                    {currentPage}/{totalPages}
+                </Text>
+            </div>
+
             <ButtonIcon
                 disabled={currentPage === totalPages}
                 onClick={() => onPageChange(currentPage + 1)}
                 icon={ArrowRightIcon}
                 ariaLabel="next"
+                size="sm"
             />
         </nav>
     );
