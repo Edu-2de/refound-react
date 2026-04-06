@@ -11,6 +11,7 @@ export const buttonIconVariants = tv({
     variants: {
         size: {
             md: "w-12 h-12",
+            sm: "w-8 h-8",
         },
         disabled: {
             true: "opacity-50 pointer-events-none",

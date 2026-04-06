@@ -31,7 +31,7 @@ export default function InputSelect({
                     className={wrapper({
                         className: `
                             group w-full flex justify-between items-center outline-none 
-                            bg-transparent text-gray-100 cursor-pointer 
+                            bg-transparent text-gray-200 cursor-pointer 
                             data-[state=open]:border-green-100 
                             ${wrapperClassName || ""}
                         `,
