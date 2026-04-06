@@ -15,6 +15,7 @@ export default function InputText({
     wrapperClassName,
     size,
     title,
+    type,
     id,
     ...props
 }: InputTextProps) {
@@ -26,7 +27,7 @@ export default function InputText({
             <Input.Label htmlFor={inputId}>{title}</Input.Label>
 
             <Input.Wrapper className={wrapperClassName} size={size}>
-                <Input.Field id={inputId} {...props} />
+                <Input.Field type={type} id={inputId} {...props} />
             </Input.Wrapper>
         </Input.Root>
     );

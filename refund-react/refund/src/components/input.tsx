@@ -6,19 +6,19 @@ export const inputVariants = tv({
         container: "flex flex-col gap-2 group",
         label: "text-gray-200 group-focus-within:text-green-100 group-focus-within:font-bold transition-all ",
         wrapper:
-            "border-2 border-solid border-gray-300 focus-within:border-green-100 bg-transparent rounded-lg flex items-center w-full min-w-60 ",
-        input: "bg-transparent outline-none placeholder:text-gray-200 flex-1 text-gray-100 caret-green-100",
+            "border-2 border-solid border-gray-400 focus-within:border-green-100 bg-transparent rounded-lg flex items-center w-full min-w-40 px-4",
+        input: "bg-transparent outline-none placeholder:text-gray-200 flex-1 w-full text-gray-100 caret-green-100",
     },
     variants: {
         size: {
             sm: {
-                wrapper: "p-2",
+                wrapper: " py-2.5",
             },
             md: {
-                wrapper: "p-4",
+                wrapper: " py-4",
             },
             lg: {
-                wrapper: " p-6",
+                wrapper: " py-6",
             },
         },
     },
