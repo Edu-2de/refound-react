@@ -11,6 +11,9 @@ export const inputVariants = tv({
     },
     variants: {
         size: {
+            xs: {
+                wrapper: "py-0",
+            },
             sm: {
                 wrapper: " py-2.5",
             },
