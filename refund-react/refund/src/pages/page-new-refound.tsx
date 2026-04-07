@@ -1,10 +1,20 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import Card from "../components/card";
 import InputSelect from "../components/input-select";
+import InputSingleFile from "../components/input-single-file";
 import InputText from "../components/input-text";
 import Text from "../components/text";
 
 export default function PageNewRefound() {
+    const form = useForm({
+        defaultValues: {
+            nomeDaSolicitacao: "",
+            categoria: "",
+            valorInCents: 0,
+            comprovante: undefined,
+        },
+    });
     const [valueInCents, setValueInCents] = React.useState(0);
 
     const handleConvertNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,9 +41,7 @@ export default function PageNewRefound() {
                     </Text>
                 </div>
                 <div className="flex flex-col gap-6">
-                    <div>
-                        <InputText title="NOME DA SOLICITAÇÃO" />
-                    </div>
+                    <InputText title="NOME DA SOLICITAÇÃO" />
 
                     <div className="flex flex-row gap-4">
                         <InputSelect className="flex-1" title="CATEGORIA" />
@@ -45,6 +53,13 @@ export default function PageNewRefound() {
                             onChange={handleConvertNumber}
                         />
                     </div>
+
+                    <InputSingleFile
+                        size="xs"
+                        form={form}
+                        maxFileSizeInMB={50}
+                        allowedExtensions={["pdf"]}
+                    />
                 </div>
             </form>
         </Card>
