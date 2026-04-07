@@ -58,10 +58,9 @@ export default function InputSingleFile({
     }
 
     function isValidFile() {
-        return isValidExtension() && isValidSize(); // Corrigido a chamada da função
+        return isValidExtension() && isValidSize();
     }
 
-    // GATILHO: Esta função força o clique no input escondido
     const handleTriggerClick = () => {
         document.getElementById(inputId)?.click();
     };
@@ -73,36 +72,33 @@ export default function InputSingleFile({
                     <Input.Root className={className}>
                         <Input.Label htmlFor={inputId}>COMPROVANTE</Input.Label>
 
-                        {/* O Wrapper agora é clicável e tem o cursor de "mãozinha" */}
                         <Input.Wrapper
                             className={`cursor-pointer pr-0 pl-4 ${wrapperClassName || ""}`}
                             size={size}
                             onClick={handleTriggerClick}
                         >
-                            {/* 1. O INPUT VERDADEIRO (Invisível) */}
                             <input
                                 type="file"
                                 id={inputId}
                                 className="hidden"
+                                {...form?.register(name)}
                                 {...props}
                             />
 
-                            {/* 2. O INPUT MANEQUIM (Visual para ficar igual ao Figma) */}
                             <Input.Field
                                 type="text"
                                 readOnly
                                 placeholder="Nome do arquivo.pdf"
                                 className="cursor-pointer pointer-events-none"
-                                tabIndex={-1} // Evita que o usuário foque nele com o teclado
+                                tabIndex={-1}
                             />
 
-                            {/* 3. O BOTÃO VERDE */}
                             <ButtonIcon
                                 type="button"
                                 ariaLabel="ENVIAR ARQUIVO"
                                 icon={CloudIcon}
                                 onClick={(e) => {
-                                    e.stopPropagation(); // Evita clique duplicado com o Wrapper
+                                    e.stopPropagation();
                                     handleTriggerClick();
                                 }}
                             />

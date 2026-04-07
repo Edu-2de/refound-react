@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Button from "../components/button";
 import Card from "../components/card";
 import InputSelect from "../components/input-select";
 import InputSingleFile from "../components/input-single-file";
@@ -57,10 +58,14 @@ export default function PageNewRefound() {
                     <InputSingleFile
                         size="xs"
                         form={form}
-                        maxFileSizeInMB={50}
+                        name="comprovante"
+                        maxFileSizeInMB={909}
                         allowedExtensions={["pdf"]}
                     />
                 </div>
+                <Button type="submit" size="lg">
+                    Enviar
+                </Button>
             </form>
         </Card>
     );
