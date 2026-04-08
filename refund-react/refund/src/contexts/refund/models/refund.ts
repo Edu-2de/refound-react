@@ -1,9 +1,10 @@
 import type { Receipt } from "../../receipt/models/receipt";
+import type { RefundCategory } from "../constants/refund-categories";
 
 export interface Refund {
     id: string;
     title: string;
-    category: "food" | "hosting" | "transport" | "services" | "other";
+    category: RefundCategory;
     value: number;
     receipt: Receipt;
     deletedAt: string | null;

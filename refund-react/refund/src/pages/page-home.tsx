@@ -1,9 +1,8 @@
-// page-home.tsx
 import { useEffect, useState } from "react";
 import Card from "../components/card";
 import Text from "../components/text";
-import RefundFilterList from "../contexts/refound/components/refund-filter-list";
-import useRefunds from "../contexts/refound/hooks/use-refunds";
+import RefundFilterList from "../contexts/refund/components/refund-filter-list";
+import useRefunds from "../contexts/refund/hooks/use-refunds";
 
 export default function PageHome() {
     const [searchInput, setSearchInput] = useState("");

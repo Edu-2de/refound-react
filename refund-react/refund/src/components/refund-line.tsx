@@ -1,37 +1,10 @@
 import cv from "classnames";
-import BedIcon from "../assets/icons/Bed.svg?react";
-import DesktopIcon from "../assets/icons/DesktopTower.svg?react";
-import KnifeIcon from "../assets/icons/ForkKnife.svg?react";
-import CarIcon from "../assets/icons/PoliceCar.svg?react";
-import WrenchIcon from "../assets/icons/Wrench.svg?react";
+import { REFUND_CATEGORIES } from "../contexts/refund/constants/refund-categories";
 
 import Icon from "./icon";
 import Text from "./text";
 
-const iconsVariation = {
-    food: {
-        icon: KnifeIcon,
-        title: "Alimentação",
-    },
-    hosting: {
-        icon: BedIcon,
-        title: "Hospedagem",
-    },
-    transport: {
-        icon: CarIcon,
-        title: "Transporte",
-    },
-    services: {
-        icon: WrenchIcon,
-        title: "Serviços",
-    },
-    other: {
-        icon: DesktopIcon,
-        title: "Outros",
-    },
-};
-
-type Category = keyof typeof iconsVariation;
+type Category = keyof typeof REFUND_CATEGORIES;
 
 interface RefundLineProps extends React.ComponentProps<"div"> {
     category: Category;
@@ -46,8 +19,8 @@ export default function RefundLine({
     className,
     ...props
 }: RefundLineProps) {
-    const CurrentIcon = iconsVariation[category].icon;
-    const CurrentTitle = iconsVariation[category].title;
+    const categoryData = REFUND_CATEGORIES[category];
+
     return (
         <div
             className={cv(
@@ -60,13 +33,13 @@ export default function RefundLine({
                 <div className="flex items-center justify-center w-8.5 h-8.5 rounded-full bg-gray-400">
                     <Icon
                         className="fill-green-100 w-4.5 h-4.5"
-                        svg={CurrentIcon}
+                        svg={categoryData.icon}
                     />
                 </div>
 
                 <div className="flex flex-col">
                     <Text variant="heading-sm-bold">{name}</Text>
-                    <Text variant="body-sm">{CurrentTitle}</Text>
+                    <Text variant="body-sm">{categoryData.label}</Text>
                 </div>
             </div>
 
