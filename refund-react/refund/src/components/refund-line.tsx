@@ -21,7 +21,6 @@ const iconsVariation = {
         icon: CarIcon,
         title: "Transporte",
     },
-    // Adiciona estas duas linhas!
     services: {
         icon: WrenchIcon,
         title: "Serviços",
@@ -34,19 +33,19 @@ const iconsVariation = {
 
 type Category = keyof typeof iconsVariation;
 
-interface RefoundLineProps extends React.ComponentProps<"div"> {
+interface RefundLineProps extends React.ComponentProps<"div"> {
     category: Category;
     name: string;
     amount: string;
 }
 
-export default function RefoundLine({
+export default function RefundLine({
     category,
     name,
     amount,
     className,
     ...props
-}: RefoundLineProps) {
+}: RefundLineProps) {
     const CurrentIcon = iconsVariation[category].icon;
     const CurrentTitle = iconsVariation[category].title;
     return (
