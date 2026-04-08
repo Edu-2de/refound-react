@@ -1,8 +1,8 @@
-import BedIcon from "../assets/icons/Bed.svg?react";
-import DesktopIcon from "../assets/icons/DesktopTower.svg?react";
-import KnifeIcon from "../assets/icons/ForkKnife.svg?react";
-import CarIcon from "../assets/icons/PoliceCar.svg?react";
-import WrenchIcon from "../assets/icons/Wrench.svg?react";
+import BedIcon from "../../../assets/icons/Bed.svg?react";
+import DesktopIcon from "../../../assets/icons/DesktopTower.svg?react";
+import KnifeIcon from "../../../assets/icons/ForkKnife.svg?react";
+import CarIcon from "../../../assets/icons/PoliceCar.svg?react";
+import WrenchIcon from "../../../assets/icons/Wrench.svg?react";
 
 export type RefundCategory =
     | "food"

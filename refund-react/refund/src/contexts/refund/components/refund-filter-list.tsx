@@ -1,4 +1,3 @@
-import type React from "react";
 import SearchIcon from "../../../assets/icons/MagnifyingGlass.svg?react";
 import ButtonIcon from "../../../components/button-icon";
 import InputText from "../../../components/input-text";
@@ -8,16 +7,21 @@ import type { Refund } from "../models/refund";
 
 interface RefundFilterListProps {
     refunds: Refund[];
-    isLoadingRefounds: boolean;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    meta: any;
+    isLoadingRefunds: boolean;
     searchInput: string;
-    setSearchInput: React.Dispatch<React.SetStateAction<string>>;
+    setSearchInput: (value: string) => void;
+    setCurrentPage: (value: number) => void;
 }
 
 export default function RefundFilterList({
     refunds,
-    isLoadingRefounds,
+    meta,
+    isLoadingRefunds,
     searchInput,
     setSearchInput,
+    setCurrentPage,
 }: RefundFilterListProps) {
     return (
         <>
@@ -32,22 +36,22 @@ export default function RefundFilterList({
                 <ButtonIcon ariaLabel="Pesquisar" icon={SearchIcon} />
             </div>
 
-            {isLoadingRefounds && <p>Carregando...</p>}
+            {isLoadingRefunds && <p>Carregando...</p>}
 
             <div className="flex flex-col mt-4 gap-6 pb-8">
-                {refunds.map((refound) => (
+                {refunds.map((refund) => (
                     <RefundLine
-                        key={refound.id}
+                        key={refund.id}
                         category={
-                            refound.category as
+                            refund.category as
                                 | "food"
                                 | "hosting"
                                 | "transport"
                                 | "services"
                                 | "other"
                         }
-                        name={refound.title}
-                        amount={(refound.value / 100).toLocaleString("pt-BR", {
+                        name={refund.title}
+                        amount={(refund.value / 100).toLocaleString("pt-BR", {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2,
                         })}
@@ -55,11 +59,13 @@ export default function RefundFilterList({
                 ))}
             </div>
             <div className="flex items-center justify-center">
-                <Pagination
-                    onPageChange={() => ""}
-                    currentPage={1}
-                    totalPages={3}
-                />
+                {meta && (
+                    <Pagination
+                        onPageChange={setCurrentPage}
+                        currentPage={meta.currentPage}
+                        totalPages={meta.lastPage}
+                    />
+                )}
             </div>
         </>
     );

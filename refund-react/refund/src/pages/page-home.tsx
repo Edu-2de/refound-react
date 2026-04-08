@@ -7,11 +7,16 @@ import useRefunds from "../contexts/refund/hooks/use-refunds";
 export default function PageHome() {
     const [searchInput, setSearchInput] = useState("");
     const [search, setSearch] = useState("");
-    const { refunds, isLoadingRefounds } = useRefunds(search);
+    const [currentPage, setCurrentPage] = useState(1);
+    const { refunds, meta, isLoadingRefunds } = useRefunds({
+        search,
+        page: currentPage,
+    });
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setSearch(searchInput);
+            setCurrentPage(1);
         }, 500);
 
         return () => clearTimeout(timer);
@@ -23,10 +28,12 @@ export default function PageHome() {
                 <Text variant="heading-lg-bold">Solicitações</Text>
             </div>
             <RefundFilterList
+                meta={meta}
                 refunds={refunds}
-                isLoadingRefounds={isLoadingRefounds}
+                isLoadingRefunds={isLoadingRefunds}
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}
+                setCurrentPage={setCurrentPage}
             />
         </Card>
     );
