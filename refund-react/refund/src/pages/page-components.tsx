@@ -232,7 +232,7 @@ export default function PageComponents() {
                 <div className="flex flex-wrap gap-5 items-end">
                     <Card size="lg">
                         <RefoundLine
-                            category="Alimentação"
+                            category="food"
                             name="Rodrigo"
                             amount="34,78"
                         />

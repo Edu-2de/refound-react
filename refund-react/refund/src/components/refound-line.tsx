@@ -1,19 +1,34 @@
 import cv from "classnames";
 import BedIcon from "../assets/icons/Bed.svg?react";
+import DesktopIcon from "../assets/icons/DesktopTower.svg?react";
 import KnifeIcon from "../assets/icons/ForkKnife.svg?react";
 import CarIcon from "../assets/icons/PoliceCar.svg?react";
+import WrenchIcon from "../assets/icons/Wrench.svg?react";
+
 import Icon from "./icon";
 import Text from "./text";
 
 const iconsVariation = {
-    Alimentação: {
+    food: {
         icon: KnifeIcon,
+        title: "Alimentação",
     },
-    Hospedagem: {
+    hosting: {
         icon: BedIcon,
+        title: "Hospedagem",
     },
-    Transporte: {
+    transport: {
         icon: CarIcon,
+        title: "Transporte",
+    },
+    // Adiciona estas duas linhas!
+    services: {
+        icon: WrenchIcon,
+        title: "Serviços",
+    },
+    other: {
+        icon: DesktopIcon,
+        title: "Outros",
     },
 };
 
@@ -33,6 +48,7 @@ export default function RefoundLine({
     ...props
 }: RefoundLineProps) {
     const CurrentIcon = iconsVariation[category].icon;
+    const CurrentTitle = iconsVariation[category].title;
     return (
         <div
             className={cv(
@@ -51,7 +67,7 @@ export default function RefoundLine({
 
                 <div className="flex flex-col">
                     <Text variant="heading-sm-bold">{name}</Text>
-                    <Text variant="body-sm">{category}</Text>
+                    <Text variant="body-sm">{CurrentTitle}</Text>
                 </div>
             </div>
 

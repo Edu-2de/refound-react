@@ -7,6 +7,7 @@ export default function useRefounds() {
         queryKey: ["refounds"],
         queryFn: () => fetcher("/refunds"),
     });
+
     return {
         refounds: Array.isArray(data) ? data : [],
         isLoadingRefounds: isLoading,
