@@ -20,7 +20,7 @@ import InputSelect from "../components/input-select";
 import InputText from "../components/input-text";
 import NavLink from "../components/navlink";
 import Pagination from "../components/pagination";
-import RefoundLine from "../components/refound-line";
+import RefundLine from "../components/refund-line";
 
 export default function PageComponents() {
     return (
@@ -231,7 +231,7 @@ export default function PageComponents() {
                 </Text>
                 <div className="flex flex-wrap gap-5 items-end">
                     <Card size="lg">
-                        <RefoundLine
+                        <RefundLine
                             category="food"
                             name="Rodrigo"
                             amount="34,78"
